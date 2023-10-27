@@ -1,0 +1,45 @@
+@startuml Class diagram
+skinparam classAttributeIconSize 0
+hide circle
+
+class ShoppingBag {
+    +addItem(item: Item)
+    +addDiscount(discount: Discount)
+    +getTotalCost(): Int
+    -countItems(discountCode: String): Int
+}
+
+
+
+abstract class Discount {
+    -itemCode: String
+    -minItems: Int
+    +getItemCode(): String
+    +getMinItems(): Int
+    +{abstract} discountedPrice(item: Item): Int
+}
+class PercentageDiscount {
+    -discount: Int
+}
+class CashDiscount {
+    -discount: Int
+}
+Discount <|-- PercentageDiscount
+Discount <|-- CashDiscount
+
+class Item {
+    -cost: Int
+    -code: String
+    +getCost(): Int
+    +getCode(): String
+}
+
+ShoppingBag --* "0..*" Item
+ShoppingBag --o "0..*" Discount
+
+class DiscountFactory {
+    +createDiscount(specifier: String): Discount
+}
+DiscountFactory .> Discount
+
+@enduml
