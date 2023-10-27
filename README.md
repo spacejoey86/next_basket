@@ -5,8 +5,10 @@ However it was fun to make.
 ## Design docs
 The prompt is in prompt.md
 
-I also made a UML class diagram at class_diagram.pu
-this uses PlantUML, find out more at https://plantuml.com/
+Here is the UML class diagram for the project:
+![class_diagram.pu](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/spacejoey86/next_basket/main/class_diagram.pu)
+
+This uses PlantUML, find out more at https://plantuml.com/
 
 ## License
 This software is licensed under AGPL
