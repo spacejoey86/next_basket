@@ -40,6 +40,7 @@ ShoppingBag --o "0..*" Discount
 class DiscountFactory {
     +createDiscount(specifier: String): Discount
 }
-DiscountFactory .> Discount
+DiscountFactory .> PercentageDiscount
+DiscountFactory .> CashDiscount
 
 @enduml
